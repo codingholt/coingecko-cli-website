@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactTerminalCommand from 'react-terminal-command'
 import '../App.css'
+const isDark = window.matchMedia('(prefers-color-scheme: dark)')
 
 
 const Content = () => {
@@ -32,8 +33,11 @@ const Content = () => {
     To get started run the commmand:
     </p>
   </div>
-    <div className='column is-offset-2'>
-    <ReactTerminalCommand command='npm install -g coingecko-cli' className='i is-pulled-right'/>
+    <div className='column is-offset-2 is-narrow is-desktop">'>
+    
+    <ReactTerminalCommand command='npm install -g coingecko-cli' 
+    withDark={isDark.matches}
+    className='code-embed'/>
 </div>
     </div>
     </section>
